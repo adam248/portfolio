@@ -14,6 +14,10 @@
 - [ ] add login page (social via github)
 - [ ] create CI devops for automating pythonanywhere updates
 - [ ] create a Todo app can use it without login but with login it saves the data for a period of time.
+- [ ] Visualize Sorting Algorithms
+- [ ] Visualize Pathfinding Algorithms
+- [ ] eCommerce Site
+
 
 ### Installation
 
