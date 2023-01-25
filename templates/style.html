@@ -1,4 +1,4 @@
-{% extends "favicon.html" %}
+{% extends "favicon.html" %} {% load static %}
 <!-- site wide style block in the head html tag -->
 {% block style %}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,4 +14,20 @@
   crossorigin="anonymous"
 ></script>
 
+<!-- Our project just needs Font Awesome Free's Solid and Brand files -->
+<link
+  href="{% static 'fontawesomefree/css/fontawesome.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  href="{% static 'fontawesomefree/css/brands.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  href="{% static 'fontawesomefree/css/solid.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
 {% endblock %}
