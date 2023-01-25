@@ -1,4 +1,4 @@
-# Django Portfolio Project
+# My Django Portfolio Project
 
 ## Adam J. Butler
 
