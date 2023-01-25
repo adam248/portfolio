@@ -27,6 +27,14 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "fontawesomefree"
+version = "6.2.1"
+description = "Font Awesome Free"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.3"
 description = "A non-validating SQL parser."
@@ -45,7 +53,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "8070a9888290f52ebd017534a68014a5724f63a94dfed4c513488df1f2c31d0f"
+content-hash = "1008a8b364c25019d01bc3ca985687704a0c696937cc614ddc4f0521b12a0238"
 
 [metadata.files]
 asgiref = [
@@ -55,6 +63,9 @@ asgiref = [
 django = [
     {file = "Django-4.1.5-py3-none-any.whl", hash = "sha256:4b214a05fe4c99476e99e2445c8b978c8369c18d4dea8e22ec412862715ad763"},
     {file = "Django-4.1.5.tar.gz", hash = "sha256:ff56ebd7ead0fd5dbe06fe157b0024a7aaea2e0593bb3785fb594cf94dad58ef"},
+]
+fontawesomefree = [
+    {file = "fontawesomefree-6.2.1-py3-none-any.whl", hash = "sha256:961d015f2f2355b389429d6f18006d304573ab88455ea39cc15975a7a59f048f"},
 ]
 sqlparse = [
     {file = "sqlparse-0.4.3-py3-none-any.whl", hash = "sha256:0323c0ec29cd52bceabc1b4d9d579e311f3e4961b98d174201d5622a23b85e34"},
