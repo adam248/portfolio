@@ -1,51 +1,19 @@
 {% extends "base.html" %} {% block header %}
 
-<section class="m-4" id="home">
-  <h1 class="display-5 m-3">Welcome to My Portfolio</h1>
-  <p class="lead m-3">
-    Please explore this site to see all my published creations.
-  </p>
-  <p class="m-4">
-    <a
-      class="btn btn-primary"
-      href="https://github.com/adam248/portfolio"
-      target="_blan"
-    >
-      Check out the Source Code
-      <i class="fa-brands fa-github"></i>
-    </a>
-  </p>
+<section class="align-items-center justify-content-center" id="home">
+  <div>
+    <h1 class="display-5 m-3">Welcome to My Portfolio</h1>
+    <p class="lead m-3">Explore this site to see all my published creations.</p>
+    <p class="m-4">
+      <a
+        class="btn btn-primary"
+        href="https://github.com/adam248/portfolio"
+        target="_blank"
+      >
+        Check out the Source Code
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </p>
+  </div>
 </section>
-{% endblock %} {% block content %}
-<div class="p-4 w-20">
-  <p>
-    Welcome to my coding portfolio! My name is Adam and I am passionate about
-    all things STEM (Science, Technology, Engineering, and Mathematics).
-  </p>
-  <p>
-    I am proficient in Python and enjoy its beautiful simple syntax. I have
-    experience with the Django web framework and find it to be a powerful tool
-    for building web applications.
-  </p>
-  <p>
-    Currently, I am expanding my skillset by learning TypeScript, Rust, and
-    full-stack development. I am excited to continue learning and growing as a
-    developer.
-  </p>
-  <p>
-    I am also interested in collaborating on open-source projects. If you have
-    an interesting project that you would like me to contribute to, please feel
-    free to reach out. Thank you for visiting my portfolio, and I hope you find
-    it informative and enjoyable.
-  </p>
-</div>
-<section class="p-4" id="code-examples">
-  <h2>Code Examples</h2>
-  <ul>
-    <li>Sorting Algorithms</li>
-    <li>Path Finding Algorithms</li>
-    <li>Todo App</li>
-    <li>eCommerce Site</li>
-  </ul>
-</section>
-{% endblock %}
+{% endblock %} {% block content %} {% endblock %}
