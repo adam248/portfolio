@@ -1,21 +1,16 @@
-{% extends "base.html" %}
-</>
+{% extends "base.html" %} {% block title %} {{settings.APP_NAME}} {% endblock %}
 {% block header %}
 <section id="home">
   <h1>Welcome to My Portfolio</h1>
   <p>Please explore this site to see all my currently published creations.</p>
-  <p>
-    This site was built with the Python Full Stack framework Django.
-  </p>
+  <p>This site was built with the Python Full Stack framework Django.</p>
   <p>
     <button class="btn btn-primary" href="https://github.com/adam248/portfolio">
       Check out the Source Code
     </button>
   </p>
 </section>
-{% endblock %}
-</>
-{% block content %}
+{% endblock %} {% block content %}
 <section id="services">
   <h2>Code Examples</h2>
   <ul>
