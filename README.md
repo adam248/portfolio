@@ -5,6 +5,7 @@
 ### Notes
 
 - this will run on pythonanywhere
+- I'll focus on making this code as reusable as possible for future projects
 
 ### TODOs
 
