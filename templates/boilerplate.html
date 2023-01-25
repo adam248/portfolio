@@ -14,10 +14,12 @@
   <body>
     <!-- site wide navbar -->
     {% block navbar %} {% endblock %}
-    <!-- app/page header (introduction elements or navigation) -->
-    {% block header %} {% endblock %}
-    <!-- app/page content (article, form or other main focual point) -->
-    {% block content %} {% endblock %}
+    <div class="container">
+      <!-- app/page header (introduction elements or navigation) -->
+      {% block header %} {% endblock %}
+      <!-- app/page content (article, form or other main focual point) -->
+      {% block content %} {% endblock %}
+    </div>
     <!-- site wide footer -->
     {% block footer %} {% endblock %}
     <!-- load scripts at the end of the file -->
