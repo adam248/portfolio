@@ -1,7 +1,13 @@
 {% extends "style.html" %} {% load static %} {% block navbar %}
 <nav class="navbar navbar-expand-sm navbar-light bg-primary">
   <div class="container">
-    <a href="/" class="navbar-brand"> {{ settings.APP_NAME }} </a>
+    <a href="/" class="navbar-brand">
+      <img
+        class="d-inline-block align-top"
+        src="{% static 'favicon/white-32.png' %}"
+      />
+      Adam's Portfolio
+    </a>
     <button
       type="button"
       data-bs-toggle="collapse"
