@@ -1,7 +1,10 @@
 {% extends "base.html" %} {% block header %}
-<section id="home">
-  <h1>Welcome to My Portfolio</h1>
-  <p>Please explore this site to see all my published creations.</p>
+
+<section class="m-4" id="home">
+  <h1 class="display-5">Welcome to My Portfolio</h1>
+  <p class="lead">
+    Please explore this site to see all my published creations.
+  </p>
   <p>This site was built with the Python Full Stack framework Django.</p>
   <p>
     <a
@@ -15,12 +18,13 @@
   </p>
 </section>
 {% endblock %} {% block content %}
-<section id="code-examples">
+<section class="p-4" id="code-examples">
   <h2>Code Examples</h2>
   <ul>
     <li>Path Finding Algorithms</li>
     <li>Todo App</li>
     <li>Sorting Algorithms</li>
   </ul>
+  <p>{% lorem 1 b random %}</p>
 </section>
 {% endblock %}

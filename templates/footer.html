@@ -1,14 +1,23 @@
 {% extends "navbar.html" %} {% block footer%}
-<footer>
-  <div class="container">
-    <h5>Technology Stack Used:</h5>
-    <ul>
-      <li>Python 3.11</li>
-      <li>Django 4.1</li>
-      <li>HTML5</li>
-      <li>Bootstrap 5</li>
-    </ul>
-    <p>Copyright ©2023</p>
+<footer class="m-1 p-4 bg-dark-subtle text-white">
+  <div class="container sticky-bottom text-center text-md-left">
+    <div class="row text-center text-md-left">
+      <div class="col">
+        <h5 class="text-uppercase text-warning">Technology Stack Used</h5>
+        <ul class="list-group">
+          <li>Python 3.11</li>
+          <li>Django 4.1</li>
+          <li>HTML5</li>
+          <li>Bootstrap 5</li>
+        </ul>
+      </div>
+      <div class="col">
+        <p>
+          © Copyright 2023 by Adam Butler <br />
+          All rights reserved
+        </p>
+      </div>
+    </div>
   </div>
 </footer>
 {% endblock %}
