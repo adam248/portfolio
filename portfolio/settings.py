@@ -34,7 +34,11 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    # User
     "home.apps.HomeConfig",
+    # Third-party apps
+    "fontawesomefree",
+    # Django Framework
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
