@@ -1,17 +1,30 @@
-{% extends "base.html" %} 
-</>
-{% block content %}
-<section class="container text-center m-3 p-3" id="about">
+{% extends "base.html" %} {% block content %}
+<section class="container text-center p-4" id="about">
   <h1 class="display-5">About Me</h1>
   <p class="lead">
-    I am a full stack developer and I enjoy creating websites and web applications.
+    I am a full stack developer and I enjoy creating websites and web
+    applications.
   </p>
-  <figure>
-    <img
-      src="https://images.unsplash.com/photo-1673987995617-66c2e3df5173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80"
-      alt="Placeholder image"
-    />
-    <figcaption>A placeholder image of me</figcaption>
-  </figure>
+  <p class="m-4">
+    <a
+      class="btn btn-primary"
+      href="https://github.com/adam248/"
+      target="_blan"
+    >
+      Check out my Github
+      <i class="fa-brands fa-github"></i>
+    </a>
+  </p>
+  <div class="row m-4 p-4">
+    <figure class="mh-50">
+      <img
+        class="rounded img-fluid"
+        src="https://images.unsplash.com/photo-1673987995617-66c2e3df5173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80"
+        style="height: 390px"
+        alt="Placeholder image"
+      />
+      <figcaption>A placeholder image of me</figcaption>
+    </figure>
+  </div>
 </section>
 {% endblock %}
