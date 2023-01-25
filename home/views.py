@@ -9,5 +9,13 @@ class HomeView(View):
         return render(request, "home/home.html", context)
 
 
-def about(request):
-    return HttpResponse("<h1>About</h1>")
+class AboutView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/about.html", context)
+
+
+class ContactView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/contact.html", context)
