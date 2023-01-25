@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- page title (can be left to just be the site wide or app/page specific) -->
+    <title>{% block title %}{{ settings.APP_NAME }}{% endblock %}</title>
+    <!-- page icon (can be left to just be the site wide or app/page specific) -->
+    {% block favicon %} {% endblock %}
+    <!-- site wide style -->
+    {% block style %} {% endblock %}
+    <!-- app/page specific metadata -->
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    <!-- site wide navbar -->
+    {% block navbar %} {% endblock %}
+    <!-- app/page header (introduction elements or navigation) -->
+    {% block header %} {% endblock %}
+    <!-- app/page content (article, form or other main focual point) -->
+    {% block content %} {% endblock %}
+    <!-- site wide footer -->
+    {% block footer %} {% endblock %}
+    <!-- load scripts at the end of the file -->
+    {% block scripts %} {% endblock %}
+  </body>
+</html>
