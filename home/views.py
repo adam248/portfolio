@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views import View
 
 
-# Create your views here.
-def home(request):
-    return HttpResponse("<h1>Home</h1>")
+class HomeView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/home.html", context)
 
 
 def about(request):
