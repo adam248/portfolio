@@ -1,5 +1,7 @@
 # How this template system works
 
+## Deprecated! Use the include tag as well!
+
 The main idea here is to only have the html boilerplate in one place that will be used globally.
 
 The logic is this:
