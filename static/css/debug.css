@@ -1,0 +1,12 @@
+/* debug style */
+.debug {
+    border: 1px dashed #F00;
+}
+
+.debug * {
+    border: 1px dashed #F00;
+}
+
+.debug-inspect {
+    border: 2px solid #0F0;
+}

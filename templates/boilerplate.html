@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark" class="m-0" style="height: 100%">
   <head>
     <meta charset="utf-8" />
     <!-- page title (can be left to just be the site wide or app/page specific) -->
@@ -11,21 +11,18 @@
     <!-- app/page specific metadata -->
     {% block head %} {% endblock %}
   </head>
-  <body>
-    <div class="d-flex flex-column min-vh-100">
-      <!-- site wide navbar -->
-      {% block navbar %} {% endblock %}
-      <div class="container flex-fill">
-        <div class="container text-center">
-          <!-- app/page header (introduction elements or navigation) -->
-          {% block header %} {% endblock %}
-        </div>
-        <!-- app/page content (article, form or other main focual point) -->
-        {% block content %} {% endblock %}
-      </div>
-      <!-- site wide footer -->
-      {% block footer %} {% endblock %}
+  <body class="m-0" style="min-height: 100vh">
+    <!-- site wide navbar -->
+    {% block navbar %} {% endblock %}
+    <!-- min-height here pushes the footer to the bottom of the page -->
+    <div class="justify-content-center" style="min-height: 74vh">
+      <!-- app/page header (introduction elements or navigation) -->
+      {% block header %} {% endblock %}
+      <!-- app/page content (article, form or other main focual point) -->
+      {% block content %} {% endblock %}
     </div>
+    <!-- site wide footer -->
+    {% block footer %} {% endblock %}
     <!-- load scripts at the end of the file -->
     {% block scripts %} {% endblock %}
   </body>
