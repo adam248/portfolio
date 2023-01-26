@@ -3,7 +3,7 @@
 ## Adam J. Butler
 
 Check this out live at
-[adam248.pythonanywhere.com](http://adam248.pythonanywhere.com/).
+[adam248.pythonanywhere.com](https://adam248.pythonanywhere.com/).
 
 ### Notes
 
