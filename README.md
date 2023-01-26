@@ -9,8 +9,8 @@
 
 ### TODOs
 
-- [ ] build a home page app
-- [ ] use bootstrap as I am a programmer first, designer second
+- [x] build a home page app
+- [x] use bootstrap as I am a programmer first, designer second
 - [ ] add login page (social via github)
 - [ ] create CI devops for automating pythonanywhere updates
 - [ ] create a Todo app can use it without login but with login it saves the data for a period of time.
