@@ -2,9 +2,11 @@
 
 ## Adam J. Butler
 
+Check this out live at
+[adam248.pythonanywhere.com](http://adam248.pythonanywhere.com/).
+
 ### Notes
 
-- this will run on pythonanywhere
 - I'll focus on making this code as reusable as possible for future projects
 
 ### TODOs
@@ -12,7 +14,6 @@
 - [x] build a home page app
 - [x] use bootstrap as I am a programmer first, designer second
 - [ ] add login page (social via github)
-- [ ] create CI devops for automating pythonanywhere updates
 - [ ] create a Todo app can use it without login but with login it saves the data for a period of time.
 - [ ] Visualize Sorting Algorithms
 - [ ] Visualize Pathfinding Algorithms
