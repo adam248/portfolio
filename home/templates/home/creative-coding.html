@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+<!---->
+{% block header %}
+<div id="creative-header" class="p-3 container text-center">
+  <h1 class="display-5">Creative Coding</h1>
+</div>
+{% endblock %}
+<!---->
+{% block content %} {% load static %}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"
+  integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="{% static 'js/bouncing-balls.js' %}"></script>
+<div id="canvas" class="container"></div>
+<div id="canvas-controls" class="container text-center"></div>
+{% endblock %}
