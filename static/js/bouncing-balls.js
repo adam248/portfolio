@@ -20,7 +20,7 @@ function setup() {
   createP().parent("canvas");
 
   reset_button = createButton("Reset");
-  reset_button.parent("canvas");
+  reset_button.parent("canvas-controls");
   reset_button.addClass("btn");
   reset_button.addClass("btn-primary");
   reset_button.mousePressed(reset);
