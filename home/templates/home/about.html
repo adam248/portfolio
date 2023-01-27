@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block header %}
-<div class="mx-auto container mt-4 pt-3 text-center">
+<div id="header" class="mx-auto container mt-4 pt-3 text-center">
   <h1 class="display-5">About Me</h1>
   <p class="lead">
     I am a full stack developer and I enjoy creating code projects and web
@@ -7,74 +7,73 @@
   </p>
 </div>
 {% endblock %} {% block content %}
-<section class="container text-center p-4" id="about">
-  <div class="d-lg-flex align-items-center justify-content-center mx-auto">
-    <div class="p-4 bg-secondary">
-      <figure>
-        <img
-          class="rounded img-fluid"
-          src="https://images.unsplash.com/photo-1673987995617-66c2e3df5173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80"
-          style="max-height: 290px; width: auto"
-          alt="Placeholder image"
-        />
-        <figcaption>A placeholder image of me</figcaption>
-      </figure>
-    </div>
-    <div class="p-4" style="max-width: 55ch">
-      <p>
-        Hi, welcome to my coding portfolio! My name is Adam and I'm an Aussie
-        (🇦🇺), born 1989. I currently am living in Darwin, Australia. I have
-        always been a well-rounded individual with a passion for learning. I
-        started my career as an electrician, but since then I have discovered my
-        passion for software development.
-      </p>
+<div class="container text-center">
+  <figure class="container">
+    <img
+      class="rounded img-fluid"
+      src="https://images.unsplash.com/photo-1673987995617-66c2e3df5173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80"
+      style="max-height: 290px; width: auto"
+      alt="Placeholder image"
+    />
+    <figcaption>A placeholder image of me</figcaption>
+  </figure>
+  <div id="intro" class="container">
+    <p>
+      Hi, welcome to my coding portfolio! My name is Adam and I'm an Aussie
+      (🇦🇺), born 1989. I currently am living in Darwin, Australia. I have always
+      been a well-rounded individual with a passion for learning. I started my
+      career as an electrician, but since then I have discovered my passion for
+      software development.
+    </p>
 
-      <p>
-        In my free time, I enjoy staying active by swimming and riding my bike.
-        I also love music and play the piano as a hobby. Additionally, I am an
-        avid computer gamer.
-      </p>
+    <p>
+      In my free time, I enjoy staying active by swimming and riding my bike. I
+      also love music and play the piano as a hobby. Additionally, I am an avid
+      computer gamer.
+    </p>
 
-      <p>
-        I consider myself a generalist, I love learning all kinds of topics,
-        there is almost no subject that I am not at least a little bit
-        interested in. I am especially interested in low-level programming and
-        backend workflows and optimizations. I still have a lot to learn, but I
-        am enjoying the journey and looking forward to seeing what the future
-        holds in the field of software development.
-      </p>
-    </div>
+    <p>
+      I consider myself a generalist, I love learning all kinds of topics, there
+      is almost no subject that I am not at least a little bit interested in. I
+      am especially interested in low-level programming and backend workflows
+      and optimizations. I still have a lot to learn, but I am enjoying the
+      journey and looking forward to seeing what the future holds in the field
+      of software development.
+    </p>
   </div>
-</section>
-
-<p class="m-4 text-center">
-  <a class="btn btn-primary" href="https://github.com/adam248/" target="_blank">
-    Check out my Github
-    <i class="bi bi-github"></i>
-  </a>
-</p>
-<div
-  class="col-lg-6 mx-auto p-4 h-100 align-items-center justify-content-center"
->
-  <p style="min-width: 35%">
-    I am passionate about all things STEM (Science, Technology, Engineering, and
-    Mathematics).
-  </p>
-  <p>
-    I am proficient in Python and enjoy its beautiful simple syntax. I have
-    experience with the Django web framework and find it to be a powerful tool
-    for building web applications.
-  </p>
-  <p>
-    Currently, I am expanding my skillset by learning TypeScript, Rust, and
-    full-stack development. I am excited to continue learning and growing as a
-    developer.
-  </p>
-  <p>
-    I am also interested in collaborating on open-source projects. If you have
-    an interesting project that you would like me to contribute to, please feel
-    free to reach out. Thank you for visiting my portfolio, and I hope you find
-    it informative and enjoyable.
-  </p>
+  <div id="github-profile-button" class="container">
+    <p class="m-4 text-center">
+      <a
+        class="btn btn-primary"
+        href="https://github.com/adam248/"
+        target="_blank"
+      >
+        Check out my Github
+        <i class="bi bi-github"></i>
+      </a>
+    </p>
+  </div>
+  <div id="extra" class="container">
+    <p>
+      I am passionate about all things STEM (Science, Technology, Engineering,
+      and Mathematics).
+    </p>
+    <p>
+      I am proficient in Python and enjoy its beautiful simple syntax. I have
+      experience with the Django web framework and find it to be a powerful tool
+      for building web applications.
+    </p>
+    <p>
+      Currently, I am expanding my skillset by learning TypeScript, Rust, and
+      full-stack development. I am excited to continue learning and growing as a
+      developer.
+    </p>
+    <p>
+      I am also interested in collaborating on open-source projects. If you have
+      an interesting project that you would like me to contribute to, please
+      feel free to reach out. Thank you for visiting my portfolio, and I hope
+      you find it informative and enjoyable.
+    </p>
+  </div>
 </div>
 {% endblock %}
