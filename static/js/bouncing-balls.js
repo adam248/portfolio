@@ -6,10 +6,6 @@ var gravity = 0.1;
 
 let balls = [];
 
-document.write(
-  '<div class="container text-center"><h3 class>Bouncing Balls!</h3></div>'
-);
-
 function setup() {
   // createCanvas(windowWidth - 20, windowHeight - windowWidth);
   var canvas = createCanvas(
@@ -18,6 +14,9 @@ function setup() {
   );
   canvas.parent("canvas");
 
+  title = createElement("h3", "Bouncing Balls!");
+  title.parent("creative-header");
+  createP().parent("creative-header");
   createP().parent("canvas");
 
   reset_button = createButton("Reset");
