@@ -21,8 +21,11 @@
         <!-- app/page content (article, form or other main focual point) -->
         {% block content %} {% endblock %}
       </article>
-      <!-- site wide footer -->
-      {% block footer %} {% endblock %}
+
+      <footer class="p-4 m-0 bg-dark-subtle text-white text-center">
+        <!-- site wide footer -->
+        {% block footer %} {% endblock %}
+      </footer>
       <!-- load scripts at the end of the file -->
       {% block scripts %} {% endblock %}
     </div>

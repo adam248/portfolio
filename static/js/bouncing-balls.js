@@ -1,6 +1,3 @@
-var canvas_width = 600;
-var canvas_height = 400;
-
 var ball_radius = 12.5;
 var gravity = 0.1;
 
@@ -28,7 +25,6 @@ function setup() {
   noStroke();
 
   reset();
-  createP().parent("canvas");
 }
 
 function windowResized() {
