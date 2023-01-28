@@ -11,9 +11,8 @@ function setup() {
   );
   canvas.parent("canvas");
 
-  title = createElement("h3", "Bouncing Balls!");
+  title = createElement("h3", "Bouncing Balls");
   title.parent("creative-header");
-  createP().parent("creative-header");
   createP().parent("canvas");
 
   reset_button = createButton("Reset");
@@ -28,8 +27,15 @@ function setup() {
 }
 
 function windowResized() {
-  // resizeCanvas(windowWidth, windowHeight);
-  resizeCanvas(windowWidth - windowWidth * 0.2, windowHeight * 0.5);
+  new_width = windowWidth - windowWidth * 0.2;
+  new_height = windowHeight * 0.5;
+  if (new_width > 1920) {
+    new_width = 1920;
+  }
+  if (new_height > 1080) {
+    new_height = 1080;
+  }
+  resizeCanvas(new_width, new_height);
 }
 
 function reset() {
