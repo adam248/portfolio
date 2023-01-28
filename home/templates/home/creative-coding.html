@@ -7,17 +7,25 @@
 {% endblock %}
 <!---->
 {% block content %} {% load static %}
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"
-  integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-<script src="{% static 'js/bouncing-balls.js' %}"></script>
-<div
-  id="canvas"
-  class="position-absolute top-50 start-50 translate-middle"
-></div>
-{% endblock %} {% block footer %}
-<div id="canvas-controls" class="container mx-auto p-3 text-center"></div>
-{% endblock %}
+
+<div class="container text-center">
+  <h3>Projects</h3>
+  <div class="d-flex justify-content-center">
+    <div class="card" style="width: 18rem">
+      <img
+        src="{% static 'js/bouncing-balls.png' %}"
+        class="card-img-top"
+        alt="Green balls on a black background"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Bouncing Balls</h5>
+        <p class="card-text">Naturally bouncing balls in a box.</p>
+        <a href="creative-coding/bouncing-balls" class="btn btn-primary"
+          >View</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock%}
