@@ -13,3 +13,8 @@ html, body {
 article {
   flex: 1;
 }
+
+#canvas {
+  cursor: pointer;
+  z-index: 10000;
+}
