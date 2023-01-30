@@ -19,6 +19,7 @@ function setup() {
   let [new_width, new_height] = get_canvas_size();
   var canvas = createCanvas(new_width, new_height);
   canvas.parent("canvas");
+  canvas.mousePressed(mouse_press);
 
   // Set Page Title
   title = createElement("h3", TITLE);
@@ -55,7 +56,7 @@ function draw() {
   ellipse(x, y, 50, 50);
 }
 
-function mousePressed() {
+function mouse_press() {
   if (!FULLSCREEN) {
     resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
     FULLSCREEN = true;
