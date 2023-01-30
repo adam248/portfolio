@@ -6,7 +6,7 @@ var gravity = 0.1;
 let balls = [];
 
 function setup() {
-  let [new_width, new_height] = get_starting_sizes();
+  let [new_width, new_height] = get_canvas_size();
   var canvas = createCanvas(new_width, new_height);
   canvas.parent("canvas");
 
@@ -36,7 +36,7 @@ function mousePressed() {
 }
 
 function windowResized() {
-  let [new_width, new_height] = get_starting_sizes();
+  let [new_width, new_height] = get_canvas_size();
   if (new_width > 1920) {
     new_width = 1920;
   }
@@ -46,7 +46,7 @@ function windowResized() {
   resizeCanvas(new_width, new_height);
 }
 
-function get_starting_sizes() {
+function get_canvas_size() {
   // old way ...
   // new_width = windowWidth - windowWidth * 0.2;
   // new_height = windowHeight * 0.5;
