@@ -21,6 +21,7 @@ Check this out live at
 - [ ] Visualize Pathfinding Algorithms
 - [ ] eCommerce Site
 - [ ] create something that processes input from user (convert PDF to PNG? or something)
+    - [ ] a live markdown to PDF converter? [Example](https://www.markdowntopdf.com/)
 - [ ] create something that uses the sqlite3 database with Django (API or something...)
 
 
