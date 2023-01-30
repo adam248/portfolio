@@ -11,6 +11,9 @@ function setupControls() {
   });
 }
 
+// if the demo breaks the user can always restart it
+function reset() {}
+
 function setup() {
   // Initialize Canvas
   let [new_width, new_height] = get_canvas_size();
@@ -52,8 +55,18 @@ function draw() {
   ellipse(x, y, 50, 50);
 }
 
-// if the demo breaks the user can always restart it
-function reset() {}
+function mousePressed() {
+  if (!FULLSCREEN) {
+    resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
+    FULLSCREEN = true;
+    reset();
+  } else {
+    let [new_width, new_height] = get_canvas_size();
+    resizeCanvas(new_width, new_height);
+    FULLSCREEN = false;
+    reset();
+  }
+}
 
 function windowResized() {
   let [x, y] = get_canvas_size();
@@ -61,6 +74,17 @@ function windowResized() {
 }
 
 function get_canvas_size() {
+  if (windowWidth > windowHeight) {
+    // landscape
+    new_width = windowHeight * 0.5;
+    new_height = windowHeight * 0.5;
+  } else {
+    // portrait
+    new_width = windowWidth * 0.5;
+    new_height = windowWidth * 0.5;
+  }
+  return [new_width, new_height];
+  // old way
   return [
     Math.min(windowWidth - windowWidth * 0.2, 1920),
     Math.min(windowHeight * 0.5, 1080),
