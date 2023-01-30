@@ -9,6 +9,7 @@ function setup() {
   let [new_width, new_height] = get_canvas_size();
   var canvas = createCanvas(new_width, new_height);
   canvas.parent("canvas");
+  canvas.mousePressed(mouse_press);
 
   title = createElement("h3", "Bouncing Balls");
   title.parent("creative-header");
@@ -25,7 +26,7 @@ function setup() {
   reset();
 }
 
-function mousePressed() {
+function mouse_press() {
   if (!FULLSCREEN) {
     resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
     FULLSCREEN = true;
@@ -36,6 +37,7 @@ function mousePressed() {
     FULLSCREEN = false;
     reset();
   }
+  console.log();
 }
 
 function windowResized() {
