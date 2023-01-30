@@ -29,20 +29,17 @@ function mousePressed() {
   if (!FULLSCREEN) {
     resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
     FULLSCREEN = true;
+    reset();
   } else {
-    windowResized();
+    let [new_width, new_height] = get_canvas_size();
+    resizeCanvas(new_width, new_height);
     FULLSCREEN = false;
+    reset();
   }
 }
 
 function windowResized() {
   let [new_width, new_height] = get_canvas_size();
-  if (new_width > 1920) {
-    new_width = 1920;
-  }
-  if (new_height > 1080) {
-    new_height = 1080;
-  }
   resizeCanvas(new_width, new_height);
 }
 
