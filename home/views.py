@@ -21,6 +21,12 @@ class BouncingBallsView(View):
         return render(request, "home/p5/bouncing-balls.html", context)
 
 
+class StarfieldView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/p5/starfield.html", context)
+
+
 class AboutView(View):
     def get(self, request):
         context = {}
