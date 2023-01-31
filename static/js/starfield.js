@@ -1,8 +1,11 @@
-// THIS IS A TEMPLATE FILE FOR MY P5.js demos
-let TITLE = "PLACEHOLDER TITLE";
+let TITLE = "Starfield";
+let FULLSCREEN = false;
 
 // Add all control elements to this for easy layout
 let controls = [];
+
+let numberOfObjects = 500;
+let objects = [];
 
 function setupControls() {
   controls.forEach((ctrl, idx) => {
@@ -12,7 +15,21 @@ function setupControls() {
 }
 
 // if the demo breaks the user can always restart it
-function reset() {}
+function reset() {
+  numberOfObjects = width * 10;
+  // MySetupFunction All creation happens here
+  for (let i = 0; i < numberOfObjects; i++) {
+    objects[i] = new Star();
+  }
+}
+
+function render() {
+  // MyDrawFunction All the objects in the `objects` array are drawn
+  for (let i = 0; i < numberOfObjects; i++) {
+    objects[i].update();
+    objects[i].draw();
+  }
+}
 
 function setup() {
   // Initialize Canvas
@@ -41,19 +58,12 @@ function draw() {
   // Try to not put anything in here that only needs to run once!
 
   // Initial Styles
-  background(0);
-  noStroke();
-  fill(0, 255, 0); // Green
-  describe("pink square with red heart in the bottom right corner");
-  fill("red");
-  noStroke();
-  ellipse(67, 67, 20, 20);
-  ellipse(83, 67, 20, 20);
-  triangle(91, 73, 75, 95, 59, 73);
+  background(0, 75);
 
-  let [x, y] = get_canvas_middle();
+  // set mid point as the reference
+  translate(width / 2, height / 2);
 
-  ellipse(x, y, 50, 50);
+  render();
 }
 
 function mouse_press() {
@@ -95,4 +105,34 @@ function get_canvas_size() {
 function get_canvas_middle() {
   let [x, y] = get_canvas_size();
   return [x / 2, y / 2];
+}
+
+class Star {
+  constructor() {
+    this.x = random(-width, width);
+    this.y = random(-height, height);
+    this.z = random(width);
+  }
+
+  update() {
+    this.acceleration = (width * height) / 100000;
+    this.z -= this.acceleration;
+    if (this.z < 1) {
+      this.z = width;
+      this.x = random(-width, width);
+      this.y = random(-height, height);
+    }
+  }
+
+  draw() {
+    noStroke();
+    fill(255);
+
+    this.sx = map(this.x / this.z, 0, 1, 0, width);
+    this.sy = map(this.y / this.z, 0, 1, 0, height);
+
+    let r = map(this.z, 0, width, 10, 0);
+
+    ellipse(this.sx, this.sy, r, r);
+  }
 }

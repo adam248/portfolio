@@ -1,15 +1,15 @@
+var FULLSCREEN = false;
+
 var ball_radius = 12.5;
 var gravity = 0.1;
 
 let balls = [];
 
 function setup() {
-  // createCanvas(windowWidth - 20, windowHeight - windowWidth);
-  var canvas = createCanvas(
-    windowWidth - windowWidth * 0.2,
-    windowHeight * 0.5
-  );
+  let [new_width, new_height] = get_canvas_size();
+  var canvas = createCanvas(new_width, new_height);
   canvas.parent("canvas");
+  canvas.mousePressed(mouse_press);
 
   title = createElement("h3", "Bouncing Balls");
   title.parent("creative-header");
@@ -26,16 +26,40 @@ function setup() {
   reset();
 }
 
+function mouse_press() {
+  if (!FULLSCREEN) {
+    resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
+    FULLSCREEN = true;
+    reset();
+  } else {
+    let [new_width, new_height] = get_canvas_size();
+    resizeCanvas(new_width, new_height);
+    FULLSCREEN = false;
+    reset();
+  }
+  console.log();
+}
+
 function windowResized() {
-  new_width = windowWidth - windowWidth * 0.2;
-  new_height = windowHeight * 0.5;
-  if (new_width > 1920) {
-    new_width = 1920;
-  }
-  if (new_height > 1080) {
-    new_height = 1080;
-  }
+  let [new_width, new_height] = get_canvas_size();
   resizeCanvas(new_width, new_height);
+}
+
+function get_canvas_size() {
+  // old way ...
+  // new_width = windowWidth - windowWidth * 0.2;
+  // new_height = windowHeight * 0.5;
+  // new way
+  if (windowWidth > windowHeight) {
+    // landscape
+    new_width = windowHeight * 0.5;
+    new_height = windowHeight * 0.5;
+  } else {
+    // portrait
+    new_width = windowWidth * 0.5;
+    new_height = windowWidth * 0.5;
+  }
+  return [new_width, new_height];
 }
 
 function reset() {
