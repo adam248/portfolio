@@ -7,16 +7,21 @@ let controls = [];
 let numberOfObjects = 500;
 let objects = [];
 
+let speed;
+
 function setupControls() {
   controls.forEach((ctrl, idx) => {
     ctrl.parent("canvas-controls");
     ctrl.style("margin", "10px");
+    ctrl.addClass("btn");
+    ctrl.addClass("btn-primary");
   });
 }
 
 // if the demo breaks the user can always restart it
 function reset() {
   numberOfObjects = width * 10;
+  speed = (width * height) / 100000;
   // MySetupFunction All creation happens here
   for (let i = 0; i < numberOfObjects; i++) {
     objects[i] = new Star();
@@ -31,6 +36,14 @@ function render() {
   }
 }
 
+function increase_speed() {
+  speed *= 1.1;
+}
+
+function decrease_speed() {
+  speed /= 1.1;
+}
+
 function setup() {
   // Initialize Canvas
   let [new_width, new_height] = get_canvas_size();
@@ -43,11 +56,21 @@ function setup() {
   title.parent("creative-header");
 
   // Create Controls
+  increase_speed_button = createButton();
+  increase_speed_button.html('<i class="bi bi-plus"></i>');
+  increase_speed_button.mousePressed(increase_speed);
+  controls.push(increase_speed_button);
+
   reset_button = createButton("Reset");
-  reset_button.addClass("btn");
-  reset_button.addClass("btn-primary");
   reset_button.mousePressed(reset);
   controls.push(reset_button);
+
+  decrease_speed_button = createButton();
+  decrease_speed_button.html('<i class="bi bi-dash"></i>');
+  decrease_speed_button.mousePressed(decrease_speed);
+  controls.push(decrease_speed_button);
+
+  speed = (width * height) / 100000;
 
   // Build
   setupControls();
@@ -70,12 +93,16 @@ function toggle_fullscreen() {
   if (!FULLSCREEN) {
     resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
     FULLSCREEN = true;
+    let previous_speed = speed;
     reset();
+    speed = previous_speed;
   } else {
     let [new_width, new_height] = get_canvas_size();
     resizeCanvas(new_width, new_height);
     FULLSCREEN = false;
+    let previous_speed = speed;
     reset();
+    speed = previous_speed;
   }
 }
 
@@ -115,7 +142,7 @@ class Star {
   }
 
   update() {
-    this.acceleration = (width * height) / 100000;
+    this.acceleration = speed;
     this.z -= this.acceleration;
     if (this.z < 1) {
       this.z = width;
