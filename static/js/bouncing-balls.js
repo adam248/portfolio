@@ -1,32 +1,68 @@
 var FULLSCREEN = false;
 
+var NumOfBalls = 5;
+
 var ball_radius = 12.5;
 var gravity = 0.1;
 
 let balls = [];
 
+function add_ball() {
+  NumOfBalls += 1;
+  balls.push(
+    new Ball(
+      createVector(random(width), random(height)),
+      p5.Vector.random2D().mult(random(10)),
+      ball_radius,
+      color(0, 255, 0)
+    )
+  );
+}
+
+function remove_ball() {
+  NumOfBalls -= 1;
+  balls.pop();
+}
+
 function setup() {
   let [new_width, new_height] = get_canvas_size();
   var canvas = createCanvas(new_width, new_height);
   canvas.parent("canvas");
-  canvas.mousePressed(mouse_press);
+  canvas.mousePressed(toggle_fullscreen);
 
   title = createElement("h3", "Bouncing Balls");
   title.parent("creative-header");
   createP().parent("canvas");
 
+  add_ball_button = createButton();
+  add_ball_button.html('<i class="bi bi-plus"></i>');
+  add_ball_button.parent("canvas-controls");
+  add_ball_button.style("margin: 20px;");
+  add_ball_button.addClass("btn");
+  add_ball_button.addClass("btn-primary");
+  add_ball_button.mousePressed(add_ball);
+
   reset_button = createButton("Reset");
   reset_button.parent("canvas-controls");
+  reset_button.style("margin: 20px;");
   reset_button.addClass("btn");
   reset_button.addClass("btn-primary");
   reset_button.mousePressed(reset);
+
+  remove_ball_button = createButton();
+  remove_ball_button.html('<i class="bi bi-dash"></i>');
+  remove_ball_button.parent("canvas-controls");
+  remove_ball_button.style("margin: 20px;");
+  remove_ball_button.addClass("btn");
+  remove_ball_button.addClass("btn-primary");
+  remove_ball_button.mousePressed(remove_ball);
 
   noStroke();
 
   reset();
 }
 
-function mouse_press() {
+function toggle_fullscreen() {
   if (!FULLSCREEN) {
     resizeCanvas(windowWidth * 0.98, windowHeight * 0.95);
     FULLSCREEN = true;
@@ -64,7 +100,7 @@ function get_canvas_size() {
 
 function reset() {
   balls = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < NumOfBalls; i++) {
     balls.push(
       new Ball(
         createVector(random(width), random(height)),
