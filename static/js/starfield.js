@@ -21,7 +21,8 @@ function setupControls() {
 // if the demo breaks the user can always restart it
 function reset() {
   numberOfObjects = width * 10;
-  speed = (width * height) / 100000;
+  speed = compute_speed();
+  console.log(speed);
   // MySetupFunction All creation happens here
   for (let i = 0; i < numberOfObjects; i++) {
     objects[i] = new Star();
@@ -70,11 +71,15 @@ function setup() {
   decrease_speed_button.mousePressed(decrease_speed);
   controls.push(decrease_speed_button);
 
-  speed = (width * height) / 100000;
+  speed = compute_speed();
 
   // Build
   setupControls();
   reset();
+}
+
+function compute_speed() {
+  return (width * height) / (width + height) / 100;
 }
 
 function draw() {
@@ -122,11 +127,6 @@ function get_canvas_size() {
     new_height = windowWidth * 0.5;
   }
   return [new_width, new_height];
-  // old way
-  return [
-    Math.min(windowWidth - windowWidth * 0.2, 1920),
-    Math.min(windowHeight * 0.5, 1080),
-  ];
 }
 
 function get_canvas_middle() {
