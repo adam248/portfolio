@@ -149,13 +149,23 @@ class BackgrounStar {
   constructor() {
     this.x = random(-width / 2, width / 2);
     this.y = random(-height / 2, height / 2);
+
+    this.r = random(0, 1);
+    this.color = random(255);
   }
 
   draw() {
     noStroke();
-    fill(random(255));
+    if (random(10) >= 9.5) {
+      // twinkle the star
+      fill(random(255));
+    } else {
+      // draw the star's normal brightness
+      fill(this.color);
+    }
 
-    ellipse(this.x, this.y, 1, 1);
+    ellipse(this.x, this.y, this.r, this.r);
+
   }
 }
 

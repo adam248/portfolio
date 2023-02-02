@@ -114,7 +114,7 @@ function reset() {
 }
 
 function draw() {
-  background(3);
+  background(3, 225);
 
   for (let i = 0; i < balls.length; i++) {
     for (let j = 0; j < i; j++) {
