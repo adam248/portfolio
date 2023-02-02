@@ -14,8 +14,9 @@ Check this out live at
 - [x] build a home page app
 - [x] use bootstrap as I am a programmer first, designer second
 - [x] add Creative Coding page
-- [ ] add Cards to the UI on the Creative Coding page [title, image, brief description]
-- [ ] add login page (social via github)
+- [x] add Cards to the UI on the Creative Coding page [title, image, brief description]
+- [ ] add sign-up/login page (local + OAuth social via github)
+- [ ] add a user profile page
 - [ ] create a Todo app can use it without login but with login it saves the data for a period of time.
 - [ ] Visualize Sorting Algorithms
 - [ ] Visualize Pathfinding Algorithms
