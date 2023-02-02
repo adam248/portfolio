@@ -21,7 +21,19 @@ Check this out live at
 - [ ] Visualize Pathfinding Algorithms
 - [ ] eCommerce Site
 - [ ] create something that processes input from user (convert PDF to PNG? or something)
+    - [ ] a live markdown to PDF converter? [Example](https://www.markdowntopdf.com/)
+    - [ ] OR a sound file filter
 - [ ] create something that uses the sqlite3 database with Django (API or something...)
+- [ ] find a way to make the creative coding examples fullscreen
+- [ ] add a thank you page where you display all the icons of all the tech stack used in this project
+    - [ ] standing on the shoulders of giants
+    - [ ] github
+    - [ ] git
+    - [ ] django
+    - [ ] python
+    - [ ] javascript
+    - [ ] p5.js
+    - [ ] sqlite3
 
 
 ### Installation

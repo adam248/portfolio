@@ -32,6 +32,7 @@ function setup() {
 
   title = createElement("h3", "Bouncing Balls");
   title.parent("creative-header");
+  title.style("margin: 20px;");
   createP().parent("canvas");
 
   add_ball_button = createButton();

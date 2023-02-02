@@ -149,6 +149,7 @@ class BackgrounStar {
   constructor() {
     this.x = random(-width / 2, width / 2);
     this.y = random(-height / 2, height / 2);
+
     this.r = random(0, 1);
     this.color = random(255);
   }
@@ -164,6 +165,7 @@ class BackgrounStar {
     }
 
     ellipse(this.x, this.y, this.r, this.r);
+
   }
 }
 
