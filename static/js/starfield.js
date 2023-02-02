@@ -7,6 +7,9 @@ let controls = [];
 let numberOfObjects = 500;
 let objects = [];
 
+let numberOfBackgroundStars = 500;
+let backgroundStars = [];
+
 let speed;
 
 function setupControls() {
@@ -20,17 +23,24 @@ function setupControls() {
 
 // if the demo breaks the user can always restart it
 function reset() {
-  numberOfObjects = width * 10;
+  numberOfObjects = width * 2;
+  numberOfBackgroundStars = width * 2;
   speed = compute_speed();
   console.log(speed);
   // MySetupFunction All creation happens here
   for (let i = 0; i < numberOfObjects; i++) {
     objects[i] = new Star();
   }
+  for (let i = 0; i < numberOfBackgroundStars; i++) {
+    backgroundStars[i] = new BackgrounStar();
+  }
 }
 
 function render() {
   // MyDrawFunction All the objects in the `objects` array are drawn
+  for (let i = 0; i < numberOfBackgroundStars; i++) {
+    backgroundStars[i].draw();
+  }
   for (let i = 0; i < numberOfObjects; i++) {
     objects[i].update();
     objects[i].draw();
@@ -54,6 +64,7 @@ function setup() {
 
   // Set Page Title
   title = createElement("h3", TITLE);
+  title.style("margin: 20px;");
   title.parent("creative-header");
 
   // Create Controls
@@ -134,10 +145,32 @@ function get_canvas_middle() {
   return [x / 2, y / 2];
 }
 
+class BackgrounStar {
+  constructor() {
+    this.x = random(-width / 2, width / 2);
+    this.y = random(-height / 2, height / 2);
+    this.r = random(0, 1);
+    this.color = random(255);
+  }
+
+  draw() {
+    noStroke();
+    if (random(10) >= 9.5) {
+      // twinkle the star
+      fill(random(255));
+    } else {
+      // draw the star's normal brightness
+      fill(this.color);
+    }
+
+    ellipse(this.x, this.y, this.r, this.r);
+  }
+}
+
 class Star {
   constructor() {
-    this.x = random(-width, width);
-    this.y = random(-height, height);
+    this.x = random(-width / 2, width / 2);
+    this.y = random(-height / 2, height / 2);
     this.z = random(width);
   }
 
