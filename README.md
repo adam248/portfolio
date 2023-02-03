@@ -21,6 +21,8 @@ Check this out live at
 - [ ] Visualize Sorting Algorithms
 - [ ] Visualize Pathfinding Algorithms
 - [ ] eCommerce Site
+- [ ] a paper trading demo site
+  - [ ] just relay market data from a websocket to client's websocket
 - [ ] create something that processes input from user (convert PDF to PNG? or something)
     - [ ] a live markdown to PDF converter? [Example](https://www.markdowntopdf.com/)
     - [ ] OR a sound file filter
