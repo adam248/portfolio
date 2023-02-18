@@ -20,6 +20,7 @@ Check this out live at
 - [ ] create a Todo app can use it without login but with login it saves the data for a period of time.
 - [ ] Visualize Sorting Algorithms
 - [ ] Visualize Pathfinding Algorithms
+- [ ] Visualize Bitcoin data?
 - [ ] eCommerce Site
 - [ ] a paper trading demo site
   - [ ] just relay market data from a websocket to client's websocket
