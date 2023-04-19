@@ -10,7 +10,7 @@ let
 
 in
   mkShell {
-    name = "django4-pillow-crispy-env";
+    name = "django4-pillow-crispy";
     buildInputs = [ 
       python 
       pillow
