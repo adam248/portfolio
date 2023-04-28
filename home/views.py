@@ -48,3 +48,8 @@ class SudokuBacktraceView(View):
     def get(self, request):
         context = {}
         return render(request, "home/p5/sudoku_backtrace.html", context)
+
+class TicTacToeView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/p5/tictactoe.html", context)
