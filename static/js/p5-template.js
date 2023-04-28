@@ -1,6 +1,8 @@
 // THIS IS A TEMPLATE FILE FOR MY P5.js demos
 let TITLE = "PLACEHOLDER TITLE";
 
+let FULLSCREEN = false;
+
 // Add all control elements to this for easy layout
 let controls = [];
 
