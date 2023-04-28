@@ -1,17 +1,42 @@
 {% extends "base.html" %} {% block header %}
+{% load static %}
 
 <!-- the min height here is to help center the hero component -->
 <div id="home" class="align-items-center text-center">
   <div class="spacer" style="height: 100px"></div>
   <h1 class="display-5 m-3">Welcome to My Portfolio</h1>
   <p class="lead m-3">Explore this site to see all my published creations</p>
+  <!-- Favourite/Pinned Projects -->
+  <p class="lead" style="font-style: italic;">Featuring...</p>
+
+  <div class="d-flex justify-content-center">
+
+    <div class="card" style="width: 18rem">
+      <img
+        src="{% static 'js/sudoku.png' %}"
+        class="card-img-top"
+        alt="Image of a half completed sudoku board"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Sudoku Backtrace Autosolver</h5>
+        <p class="card-text">We brute force our way to a solution!</p>
+        <a href="/games/sudoku_backtrace" class="btn btn-primary"
+          >View</a
+        >
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Source code link -->
+  <div class="spacer" style="height: 20px"></div>
   <p class="m-4">
     <a
       class="btn btn-primary"
       href="https://github.com/adam248/portfolio"
       target="_blank"
     >
-      Check out the Source Code
+      Check out the Source Code for this entire site! 
       <i class="bi bi-github"></i>
     </a>
   </p>

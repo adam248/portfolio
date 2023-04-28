@@ -37,3 +37,14 @@ class ContactView(View):
     def get(self, request):
         context = {}
         return render(request, "home/contact.html", context)
+
+
+class GamesView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/games.html", context)
+
+class SudokuBacktraceView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/p5/sudoku_backtrace.html", context)
