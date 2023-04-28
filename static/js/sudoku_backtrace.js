@@ -137,7 +137,7 @@ function is_valid(board, cell, num) {
   let rowOffset = 0;
   let colOffset = 0;
 
-  let option_scope = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, "e"]);
+  let option_scope = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   for (let i = 0; i < 9; i++) {
     // check row cell i
     option_scope.delete(board[cellRowIndex * 9 + i].num);
@@ -156,28 +156,6 @@ function is_valid(board, cell, num) {
     option_scope.delete(board[final_index].num);
   }
   return option_scope.has(num);
-}
-
-function recursive_solve(board, row, col) {
-  if (r == 9) {
-    return true;
-  } else if (c == 9) {
-    return recursive_solve(board, r + 1, 0);
-  } else if (board[r][c] != 0) {
-    return recursive_solve(board, r, c + 1);
-  } else {
-    for (let i = 1; i < 10; i++) {
-      if (is_valid(board, r, c, i)) {
-        board[r][c] = i;
-        if (recursive_solve(grid, r, c + 1)) {
-          return true;
-        } else {
-          grid[r][c] = 0;
-        }
-      }
-    }
-  }
-  return false;
 }
 
 /**
