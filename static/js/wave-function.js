@@ -1,4 +1,3 @@
-// THIS IS A TEMPLATE FILE FOR MY P5.js demos
 let TITLE = "Wave Function Collapse";
 
 let FULLSCREEN = false;
