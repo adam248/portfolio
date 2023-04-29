@@ -26,6 +26,10 @@ class StarfieldView(View):
         context = {}
         return render(request, "home/p5/starfield.html", context)
 
+class WaveFunctionView(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/p5/wave-function.html", context)
 
 class AboutView(View):
     def get(self, request):
