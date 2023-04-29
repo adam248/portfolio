@@ -9,6 +9,7 @@ urlpatterns = [
     path("creative-coding/", views.CreativeCodingView.as_view()),
     path("creative-coding/bouncing-balls/", views.BouncingBallsView.as_view()),
     path("creative-coding/starfield", views.StarfieldView.as_view()),
+    path("creative-coding/wave-function", views.WaveFunctionView.as_view()),
     path("games/", views.GamesView.as_view()),
     path("games/sudoku_backtrace", views.SudokuBacktraceView.as_view()),
 ]
