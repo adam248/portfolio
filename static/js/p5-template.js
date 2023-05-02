@@ -63,7 +63,6 @@ function draw() {
   if (PAUSED) {
     noLoop(); // for easy debuging
   }
-  console.log(1);
 }
 // PROJECT SPECIFIC CLASSES AND FUNCTIONS
 //
