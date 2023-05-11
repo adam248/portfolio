@@ -7,13 +7,22 @@ let controls = [];
 let x, y;
 let game;
 let count = 0;
+let difficulty;
 
 function restart() {
+  console.log("Restarting...");
   // put your project specific setup code here for easy restarting
-  game = new Game(new HumanPlayer(), new RandomPlayer());
+  if (difficulty.value() == "Easy") {
+    game = new Game(new HumanPlayer(), new RandomPlayer());
+  } else if (difficulty.value() == "Hard") {
+    game = new Game(new HumanPlayer(), new HardAIPlayer());
+  } else if (difficulty.value() == "Impossible") {
+    throw new Error("Not Ready yet...");
+    game = new Game(new HumanPlayer(), new ImpossilbeAIPlayer());
+  }
 
   // slow motion
-  //frameRate(1);
+  frameRate(1);
 
   loop();
 
@@ -80,6 +89,120 @@ function RandomPlayer() {
   };
 }
 
+function HardAIPlayer() {
+  this.my_piece = "";
+  this.opponet_piece = "";
+  this.id = "Hard: " + Math.floor(random(1000, 10000));
+  this.play_turn = (game) => {
+    this.my_piece = game.turn % 2 == 0 ? "x" : "o";
+    this.opponet_piece = game.turn % 2 == 1 ? "x" : "o";
+    console.log(this.id, this.my_piece);
+    let possilbe_moves = game.available_moves();
+    let winning_move = this.find_winning_move(game);
+
+    // manually implement includes
+    for (let i = 0; i < possilbe_moves.length; i++) {
+      if (possilbe_moves[i] == winning_move) {
+        console.log("Returning winning_move via for loop instead of includes");
+        return winning_move;
+      }
+    }
+
+    if (possilbe_moves.includes(winning_move)) {
+      console.log(
+        "Returning to the game a winning_move OR countering a winning move"
+      );
+      return winning_move;
+    }
+    // fall back to random move if not able to find a move from the above logic
+    chosen_move = random(possilbe_moves);
+    return chosen_move;
+  };
+
+  this.find_winning_move = (game) => {
+    let winning_move = 4; // default get centre square on first move
+
+    // create an array of objects representing
+    // rows, cols and diagonals: eg. top row == {0: 'x', 1: null, 2: 'o'} == | X |  | O |
+    let board_segments = [];
+    for (let i = 0; i < 3; i++) {
+      let row = { x: 0, o: 0, null: 0, row: true };
+      let col = { x: 0, o: 0, null: 0, col: true };
+      for (let j = 0; j < 3; j++) {
+        // build row : 0 1 2 : 3 4 5 : 6 7 8 : i * 3 + j
+        row[i * 3 + j] = game.board[i * 3 + j].value;
+        row[game.board[i * 3 + j].value] += 1;
+        if (row.row === true) {
+          row.row = i * 3 + j;
+        }
+
+        // build col: 0 3 6 : 1 4 7 : 2 5 8 : i + j * 3
+        col[i + j * 3] = game.board[i + 3 * j].value;
+        col[game.board[i + 3 * j].value] += 1;
+        if (col.col === true) {
+          col.col = i + 3 * j;
+        }
+      }
+      board_segments.push(row);
+      board_segments.push(col);
+    }
+
+    // build diagonals
+    let back = { x: 0, o: 0, null: 0, back: true };
+    let forward = { x: 0, o: 0, null: 0, forward: true };
+    for (let i = 0; i < 3; i++) {
+      // 0 4 8 : * 4
+      let backIndex = i * 4;
+      back[backIndex] = game.board[backIndex].value;
+      back[game.board[backIndex].value] += 1;
+
+      // 2 4 6 : * 2 + 2
+      let forwardIndex = i * 2 + 2;
+      forward[forwardIndex] = game.board[forwardIndex].value;
+      forward[game.board[forwardIndex].value] += 1;
+    }
+    board_segments.push(back);
+    board_segments.push(forward);
+
+    console.log("board segments", board_segments);
+
+    let important_segments = board_segments.filter((segment) => {
+      return segment.x == 2 || segment.o == 2;
+    });
+
+    let important_segments2 = important_segments.filter((segment) => {
+      return segment[this.my_piece] == 2;
+    });
+
+    if (important_segments2.length > 0) {
+      important_segments = important_segments2;
+    }
+
+    console.log("Important Segments", important_segments);
+
+    important_segments.forEach((segment) => {
+      for (const [key, value] of Object.entries(segment)) {
+        if (value == null) {
+          winning_move = key;
+        }
+      }
+    });
+
+    console.log("AI Chosing move:", winning_move);
+    return winning_move;
+  };
+}
+
+function ImpossilbeAIPlayer() {
+  this.id = "Impossible: " + Math.floor(random(1000, 10000));
+  this.play_turn = (game) => {
+    console.log(this.id);
+    available_moves = game.available_moves();
+    chosen_move = random(available_moves);
+    return chosen_move;
+  };
+}
+
 function HumanPlayer() {
   this.id = "Human: " + Math.floor(random(0, 1000));
   this.play_turn = (game) => {
@@ -104,7 +227,6 @@ function Game(player1, player2) {
   }
 
   this.play = () => {
-    console.log("Play");
     if (!this.game_is_over()) {
       if (this.turn % 2 == 0) {
         if (this.player1 instanceof HumanPlayer) {
@@ -128,7 +250,7 @@ function Game(player1, player2) {
     // check for win condition
     this.winner = this.win_condition();
     console.log("Winner: ", this.winner);
-    if (this.winner) {
+    if (this.winner != "no one...") {
       return true;
     }
     // tie game (all squares filled but no 3 in a row)
@@ -184,7 +306,7 @@ function Game(player1, player2) {
       return diags[1][0];
     }
 
-    return false;
+    return "no one...";
   };
 
   this.available_moves = () => {
@@ -289,6 +411,20 @@ function createCtrlButtons() {
   reset_button.addClass("btn-primary");
   reset_button.mousePressed(restart);
   controls.push(reset_button);
+
+  div = createDiv();
+  div.addClass();
+
+  difficulty = createRadio("difficulty");
+  difficulty.addClass("form-check-inline");
+  difficulty.style("padding", "10px");
+  difficulty.option("Easy");
+  difficulty.option("Hard");
+  //difficulty.option("Impossible");
+  difficulty.selected("Easy");
+  difficulty.mouseClicked(restart);
+  //difficulty.disable(true);
+  controls.push(difficulty);
 }
 
 function get_canvas_size() {
