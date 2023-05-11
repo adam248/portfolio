@@ -216,8 +216,12 @@ function Game(player1, player2) {
       Math.floor(mouseY / (height / 3))
     );
 
-    this.waiting_for_human_move = false;
-    this.move(this.vec2Index(vec));
+    const chosen_move = this.vec2Index(vec);
+
+    if (this.available_moves().includes(chosen_move)) {
+      this.waiting_for_human_move = false;
+      this.move(this.vec2Index(vec));
+    }
   };
 
   this.show = () => {
