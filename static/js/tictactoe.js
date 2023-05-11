@@ -22,7 +22,7 @@ function restart() {
   }
 
   // slow motion
-  frameRate(1);
+  //frameRate(1);
 
   loop();
 
