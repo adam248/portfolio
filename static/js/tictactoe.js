@@ -289,23 +289,6 @@ function createCtrlButtons() {
   reset_button.addClass("btn-primary");
   reset_button.mousePressed(restart);
   controls.push(reset_button);
-
-  toggleLoop_button = createButton("Pause");
-  toggleLoop_button.addClass("btn");
-  toggleLoop_button.addClass("btn-primary");
-  toggleLoop_button.mousePressed(() => {
-    noLoop();
-    PAUSED = true;
-  });
-  controls.push(toggleLoop_button);
-
-  redraw_button = createButton("Redraw");
-  redraw_button.addClass("btn");
-  redraw_button.addClass("btn-primary");
-  redraw_button.mousePressed(() => {
-    redraw();
-  });
-  controls.push(redraw_button);
 }
 
 function get_canvas_size() {
