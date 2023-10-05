@@ -2,8 +2,14 @@
 <html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Adam Butler's Portfolio of coding creations. Using Python and Django on the backend and Javascript for frontend.">
-    <meta name="keywords" content="python, javascript, portfolio, resume, developer, software">
+    <meta
+      name="description"
+      content="Adam Butler's Portfolio of coding creations. Using Python and Django on the backend and Javascript for frontend."
+    />
+    <meta
+      name="keywords"
+      content="python, javascript, portfolio, resume, developer, software"
+    />
     <!-- page title (can be left to just be the site wide or app/page specific) -->
     <title>{% block title %}Adam's Portfolio{% endblock %}</title>
     <!-- page icon (can be left to just be the site wide or app/page specific) -->
@@ -12,6 +18,20 @@
     {% block style %} {% endblock %}
     <!-- app/page specific metadata -->
     {% block head %} {% endblock %}
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-REGRLJ5NSB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-REGRLJ5NSB");
+    </script>
   </head>
   <body>
     <div id="main-wrapper">
